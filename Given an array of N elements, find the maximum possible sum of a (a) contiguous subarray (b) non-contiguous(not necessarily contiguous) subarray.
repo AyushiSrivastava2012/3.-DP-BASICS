@@ -1,0 +1,26 @@
+t=int(raw_input())
+for i in range(t):
+    n=int(raw_input())
+    tot=0
+    alltot=0
+    sumpos=0
+    ctr=0
+    s=map(int,raw_input().split())
+    max=s[0]
+    for i in range(n):
+        if s[i]<0:
+            ctr=ctr+1
+            if max <s[i]:
+                max=s[i]
+    if ctr== n:
+        print max,max
+        continue
+    for i in range(n):
+        tot=tot+s[i]
+        if tot>alltot:
+            alltot=tot
+        elif tot<0:
+            tot=0
+        if s[i]>0:
+            sumpos=sumpos+s[i]
+    print alltot,sumpos
