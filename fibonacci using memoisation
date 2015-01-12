@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+long int fab[100],NIL=-1;
+ 
+long int fib(long int n){
+	if(fab[n] != NIL){
+		return fab[n]; 
+	}
+	else{
+		fab[n]=n*fib(n-1);
+		return fab[n];
+	}
+}
+ 
+int main() {
+	for(int i=0;i<100;i++){
+		fab[i]=NIL;
+	}
+	fab[0]=1;
+	fab[1]=1;
+	fab[2]=2;
+	cout<<fib(5);
+ 
+	return 0;
+}
